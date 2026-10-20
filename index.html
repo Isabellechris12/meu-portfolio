@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Portfólio - Trilhas</title>
+   <!-- Favicon usando Emoji -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        
+        :root {
+            --rosa-pastel: #fce7f3;
+            --rosa-borda: #fbcfe8;
+            --rosa-forte: #db2777;
+            --lilas-pastel: #f3e8ff;
+            --lilas-borda: #e9d5ff;
+            --lilas-texto: #a855f7;
+            --amarelo-pastel: #fef08a;
+            --texto-escuro: #5d4e6d;
+            --fundo-container: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Configuração da Imagem de Fundo em Padrão Repetido */
+        body {
+            background-image: url('fundo3.jpg');
+            background-size: cover;          
+            background-repeat: repeat;       
+            background-position: top left;
+            background-attachment: fixed;
+            color: var(--texto-escuro);
+            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--fundo-container);
+            border: 3px solid var(--lilas-borda);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 650px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(233, 213, 255, 0.7);
+            text-align: center;
+            backdrop-filter: blur(4px);
+            box-sizing: border-box;
+        }
+
+        .foto-perfil {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--amarelo-pastel);
+            object-fit: cover;
+            margin-bottom: 12px;
+            background-color: var(--lilas-pastel);
+            display: inline-block;
+            line-height: 100px;
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            color: var(--lilas-texto);
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        /* Fonte exclusiva para o nome na página inicial */
+        #inicio h1 {
+            font-family: 'Libre Caslon Condensed', 'Libre Caslon Text', 'Caslon', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .cargo {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--rosa-forte);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px dashed var(--amarelo-pastel);
+        }
+
+        p {
+            font-size: 1.02rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            align-items: center;
+        }
+
+       
+        .opcoes a, .botoes-card a {
+            display: block;
+            width: 80%;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #ffffff, var(--rosa-pastel));
+            color: var(--texto-escuro);
+            text-decoration: none;
+            border: 2px solid var(--rosa-borda);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(251, 207, 232, 0.6);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        
+        .opcoes a:hover, .botoes-card a:hover {
+            background: linear-gradient(135deg, var(--lilas-pastel), var(--amarelo-pastel));
+            border-color: var(--lilas-borda);
+            transform: translateY(-2px);
+            color: var(--rosa-forte);
+            box-shadow: 0 5px 10px rgba(233, 213, 255, 0.8);
+        }
+
+        
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .card-projeto {
+            background-color: #ffffff;
+            border: 2px solid var(--lilas-borda);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(233, 213, 255, 0.6);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .card-projeto:hover {
+            transform: translateY(-4px);
+        }
+
+        .imagem-projeto {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--lilas-borda);
+            background-color: var(--rosa-pastel);
+        }
+
+        .conteudo-projeto {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .conteudo-projeto h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.05rem;
+            color: var(--lilas-texto);
+            font-weight: 800;
+        }
+
+        .conteudo-projeto p {
+            margin: 0 0 12px 0;
+            font-size: 0.88rem;
+            color: var(--texto-escuro);
+            line-height: 1.4;
+        }
+
+        .botoes-card a {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+        }
+
+        
+        .secao {
+            display: none;
+        }
+
+        .secao:target {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        body:not(:has(:target)) #inicio {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98) translateY(8px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- SEÇÃO 1: INÍCIO -->
+        <div id="inicio" class="secao">
+            <img src="foto-perfil.jpg" alt="Foto de perfil de Isabelle" class="foto-perfil">
+            <h1>Olá, eu sou Isabelle Christine!  </h1> 🌟
+           
+            <div class="cargo">Desenvolvedora Front-end no Programa Trilhas</div>
+            
+            <div class="opcoes">
+                <a href="#sobre">Sobre mim</a>
+                <a href="#projetos">Veja meus projetos</a>
+                <a href="#certificados">Veja meus certificados</a>
+                <a href="https://www.linkedin.com/in/isabelle-christine-a09202270" target="_blank" rel="noopener noreferrer">Meu LinkedIn 💼</a>
+            </div>
+        </div>
+
+        
+        <div id="sobre" class="secao">
+            <img src="foto-perfil.jpg" alt="Foto de perfil de Isabelle" class="foto-perfil">
+            <h1>Sobre mim</h1>
+            <div class="cargo">Conheça minha trajetória</div>
+            <p>Sou estudante do Bacharelado Interdisciplinar em Ciência e Tecnologia. Atualmente estou no 7 período e pretendo seguir para a Engenharia da Computação, também na UFMA, e atualmente participo do Programa Trilhas. Divido meu tempo entre a tecnologia, focando na construção de interfaces web, e o mundo dos negócios, gerenciando uma loja física.</p>
+            <p>Meu objetivo é criar soluções robustas e funcionais, aplicando conceitos rigorosos de engenharia e boas práticas de design UI/UX.</p>
+            <div class="opcoes">
+                <a href="https://www.linkedin.com/in/isabelle-christine-a09202270" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn</a>
+                <a href="#inicio">Voltar ao Início</a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: PROJETOS (CARDS COM PRÉVIA DA IMAGEM E LINK DO GITHUB) -->
+        <div id="projetos" class="secao">
+            <div class="foto-perfil" style="width: 70px; height: 70px; line-height: 70px; font-size: 1.8rem;">👩‍💻</div>
+            <h1>Meus Projetos</h1>
+            <div class="cargo">Trabalhos e Códigos</div>
+            
+            <div class="grid-projetos">
+                
+                <!-- CARD PROJETO 1 -->
+                <div class="card-projeto">
+                    <img src="print-projeto1.png" alt="Prévia do Projeto Cadastro de Jogadores" class="imagem-projeto">
+                    <div class="conteudo-projeto">
+                        <div>
+                            <h3>Cadastro de Jogadores</h3>
+                            <p>Jogo interativo em HTML/CSS desenvolvido durante o módulo de lógica.</p>
+                        </div>
+                        <div class="botoes-card">
+                            <a href="https://github.com/Isabellechris12/meu-portfolio/blob/main/cadastro-jogadores.js" target="_blank" rel="noopener noreferrer">Acessar no GitHub 🚀</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD PROJETO 2 -->
+                <div class="card-projeto">
+                    <img src="projeto2-printpng.png" alt="Prévia do Sistema Farmacêutico" class="imagem-projeto">
+                    <div class="conteudo-projeto">
+                        <div>
+                            <h3>Sistema Farmacêutico</h3>
+                            <p>Modelagem de software utilizando diagramas UML e estruturação em Java.</p>
+                        </div>
+                        <div class="botoes-card">
+                            <a href="https://github.com/Isabellechris12/meu-portfolio/blob/main/sistema-usu%C3%A1rios.js" target="_blank" rel="noopener noreferrer">Acessar no GitHub 🚀</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD PROJETO 3 -->
+                 <div class="card-projeto">
+                     <img src="print3.png" alt="Prévia do Projeto para Fluxo de Plantões" class="imagem-projeto">
+                         <div class="conteudo-projeto">
+                          <div>
+                            <h3>Fluxo de Plantões</h3>
+                            <p>Modelagem de software utilizando diagramas UML e estruturação em Java/C++.</p>
+                         </div>
+                            <div class="botoes-card">
+                            <a href="https://github.com/Isabellechris12/meu-portfolio/blob/main/fluxo-farmaceutico.c%2B%2B" target="_blank" rel="noopener noreferrer">Acessar no GitHub 🚀</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="opcoes">
+                <a href="#inicio">Voltar ao Início</a>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4: CERTIFICADOS (PASTA NO GOOGLE DRIVE) -->
+        <div id="certificados" class="secao">
+            <div class="foto-perfil" style="width: 70px; height: 70px; line-height: 70px; font-size: 1.8rem;">👩‍💻</div>
+            <h1>Meus Certificados</h1>
+            <div class="cargo">Conquistas e Formações</div>
+            <p style="text-align: center;">Todos os meus certificados de conclusão e participação estão organizados em uma pasta na nuvem.</p>
+            
+            <div class="opcoes">
+                <a href="https://drive.google.com/drive/folders/1ojn6j-VruwRnURHCt9ttXa0stQKyZGST" target="_blank" rel="noopener noreferrer">Acessar pasta no Google Drive 🎓</a>
+                <a href="#inicio">Voltar ao Início</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
